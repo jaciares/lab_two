@@ -17,6 +17,11 @@ import sys
 
 
 def error_int_message():
+    """
+    error_int_message() prints the error message:
+    Please enter a positive integer
+    :return: None
+    """
     print('\tPlease enter a positive integer. ')
 
 
@@ -97,8 +102,9 @@ def generate_secure_pwd(length, num_of_upper, num_of_lower,
     numbers = string.digits
     special_chars = string.punctuation
 
-    secure_pwd = lowercase * num_of_lower + uppercase * num_of_upper + \
-                 numbers * num_of_digit + special_chars * num_of_special
+    # Putting together the number of string types into secure_pwd.
+    secure_pwd = lowercase * num_of_lower + uppercase * num_of_upper \
+                 + numbers * num_of_digit + special_chars * num_of_special
 
     user_password = random.sample(secure_pwd, length)
 
@@ -113,6 +119,15 @@ def generate_secure_pwd(length, num_of_upper, num_of_lower,
 
 
 def calc_and_format_percentage(numerator, denominator, precision):
+    """
+    calc_and_format_percentage takes three parameters in order to calculate
+    and format a percentage.
+
+    :param numerator:
+    :param denominator:
+    :param precision:
+    :return: Null
+    """
     while True:
         try:
             numerator = int(input('\tEnter a positive integer numerator: '))
@@ -153,6 +168,7 @@ def calc_and_format_percentage(numerator, denominator, precision):
 
     # Calculating percentage.
     percentage_calc = (numerator / denominator) * 100
+
     # Formatting percentage_calc with 'precision' argument.
     formatted_percentage_calc = \
         'a = {0:.{1}f}'.format(percentage_calc, precision)
@@ -165,6 +181,13 @@ def calc_and_format_percentage(numerator, denominator, precision):
 
 
 def how_many_days():
+    """
+    how_many_days() gets the current date and time from the user's system.
+    Then calculates how many days it will take from current_time to
+    future_date.
+
+    :return: None
+    """
     # Creating object current_time
     current_time = datetime.datetime.now()
 
@@ -175,10 +198,21 @@ def how_many_days():
     print('\n\n' + '*' * 90)
     print(str(calc_how_many_days.days) + ' days until target date '
           + 'Fri Jul 04, 2025')
+
+    # Send user back to the beginning of the menu.
     menu()
 
 
 def calc_law_cosines(a_to_c_length, c_to_b_length, angle_of_c):
+    """
+    calc_law_cosines() uses the law of cosines formula (leg_of_triangle) to
+    calculate the leg of a triangle based on parameters.
+
+    :param a_to_c_length:
+    :param c_to_b_length:
+    :param angle_of_c:
+    :return: None
+    """
     while True:
         try:
             a_to_c_length = int(input('\tEnter a positive integer for line a '
@@ -235,6 +269,15 @@ def calc_law_cosines(a_to_c_length, c_to_b_length, angle_of_c):
 
 
 def calc_volume_cylinder(radius, height):
+    """
+    calc_volume_cylinder() calculates the volume of a right circular cylinder
+    based on the parameters input by the user.
+    Then outputs formatted_right_cylinder to the user.
+
+    :param radius:
+    :param height:
+    :return:
+    """
     while True:
         try:
             radius = int(input('\tEnter a positive integer for the radius of '
@@ -276,6 +319,11 @@ def calc_volume_cylinder(radius, height):
 
 
 def menu():
+    """
+    menu() is the menu for all the things this application can do. The user
+    can make a selection by inputting a-f.
+    :return: None
+    """
     print('*' * 90)
     print('Welcome to the Python SDEV300 Lab 2 Application.')
 
@@ -311,6 +359,10 @@ def menu():
 
 
 def main():
+    """
+    main() is the main function of lab_two.py and runs the menu() function.
+    :return:
+    """
     menu()
 
 
