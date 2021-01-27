@@ -126,7 +126,7 @@ def calc_and_format_percentage(numerator, denominator, precision):
     :param numerator:
     :param denominator:
     :param precision:
-    :return: Null
+    :return: None
     """
     while True:
         try:
@@ -171,7 +171,7 @@ def calc_and_format_percentage(numerator, denominator, precision):
 
     # Formatting percentage_calc with 'precision' argument.
     formatted_percentage_calc = \
-        'a = {0:.{1}f}'.format(percentage_calc, precision)
+        '{0:.{1}f}'.format(percentage_calc, precision)
 
     # Output to user the calculated percentage.
     print('\n\n' + '*' * 90)
@@ -352,8 +352,12 @@ def menu():
     elif user_selection == 'e':
         calc_volume_cylinder(radius=0, height=0)
     elif user_selection == 'f':
+        print('*' * 90)
+        print('\tThanks for trying the Application.')
+        print('*' * 90)
         sys.exit()
     else:
+        print('*' * 90)
         print("You must enter a valid selection! Enter a - f.")
         menu()
 
